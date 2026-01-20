@@ -1,0 +1,77 @@
+<svg width="900" height="600" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+  <linearGradient id="blueMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#1fa2ff"/>
+    <stop offset="100%" stop-color="#0055aa"/>
+  </linearGradient>
+
+  <linearGradient id="orangeGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#ffcc66"/>
+    <stop offset="100%" stop-color="#ff6600"/>
+  </linearGradient>
+
+  <linearGradient id="silverMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#f5f7fa"/>
+    <stop offset="50%" stop-color="#cfd3d8"/>
+    <stop offset="100%" stop-color="#8f949a"/>
+  </linearGradient>
+
+  <radialGradient id="orbGlow" cx="50%" cy="40%" r="60%">
+    <stop offset="0%" stop-color="#33ccff"/>
+    <stop offset="70%" stop-color="#1a66cc"/>
+    <stop offset="100%" stop-color="#003366"/>
+  </radialGradient>
+
+  <filter id="glow">
+    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+    <feMerge>
+      <feMergeNode in="coloredBlur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+</defs>
+
+<rect width="100%" height="100%" fill="#060b16"/>
+
+<!-- Glowing Orb -->
+<circle cx="450" cy="260" r="120" fill="url(#orbGlow)" filter="url(#glow)">
+  <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="450" cy="260" r="90" fill="url(#orangeGlow)" opacity="0.9"/>
+
+<!-- Rotating Orbit -->
+<g>
+  <ellipse cx="450" cy="260" rx="200" ry="70"
+           fill="none"
+           stroke="url(#silverMetal)"
+           stroke-width="16"/>
+
+  <animateTransform attributeName="transform"
+                    type="rotate"
+                    from="0 450 260"
+                    to="360 450 260"
+                    dur="18s"
+                    repeatCount="indefinite"/>
+</g>
+
+<!-- V Symbol -->
+<path d="M310 170 L420 360 L450 320 L520 170 L490 170 L440 280 L350 170 Z"
+      fill="url(#blueMetal)"/>
+
+<!-- Text -->
+<text x="450" y="460"
+      font-family="Arial Black, sans-serif"
+      font-size="96"
+      text-anchor="middle"
+      fill="url(#silverMetal)">VJG</text>
+
+<text x="450" y="520"
+      font-family="Arial, sans-serif"
+      font-size="40"
+      letter-spacing="6"
+      text-anchor="middle"
+      fill="url(#silverMetal)">TECHNOLOGIES</text>
+
+</svg>

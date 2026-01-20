@@ -1,0 +1,3 @@
+// This is a placeholder to create the images folder. No code changes needed here.
+// Please add your images to /Users/somashekarr/VJGCode/VJG-main/client/public/images
+// Then update the img URLs in Navbar.tsx to use these local images, e.g. '/images/amit-kumar.jpg'
