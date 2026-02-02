@@ -75,8 +75,8 @@ export default function Navbar() {
             >
               {/* LOGO */}
               <motion.img
-                src="/images/logo.svg"
-                alt="VJG Logo"
+                src="/images/logo.png"
+                alt="V Logo"
                 className="
           w-[155px] h-[155px]
           object-contain
