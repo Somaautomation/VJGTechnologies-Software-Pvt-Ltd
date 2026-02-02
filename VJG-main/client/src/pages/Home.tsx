@@ -381,43 +381,67 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h2 className="text-4xl font-display font-bold">
-                100% Placement Assistance
+                Technology Delivery & Talent Enablement
               </h2>
               <p className="text-slate-300 text-lg">
-                We persist until you secure your dream position. Our dedicated placement cell works round the clock to find the right match for you.
+                We help organizations build scalable software products and strengthen their engineering capabilities. Whether it’s end-to-end development or augmenting teams with skilled professionals, we ensure consistent delivery and long-term value.
               </p>
               <div className="flex gap-8 py-4">
                 <div>
                   <div className="text-4xl font-bold text-accent mb-1">200+</div>
-                  <div className="text-sm text-slate-400">Companies</div>
+                  <div className="text-sm text-slate-400">Solutions Designed & Delivered</div>
                 </div>
                 <div>
                   <div className="text-4xl font-bold text-accent mb-1">100%</div>
-                  <div className="text-sm text-slate-400">Success Goal</div>
+                  <div className="text-sm text-slate-400">Business Clients Served</div>
                 </div>
                 <div>
                   <div className="text-4xl font-bold text-accent mb-1">150+</div>
-                  <div className="text-sm text-slate-400">Hiring Partners</div>
+                  <div className="text-sm text-slate-400">Technology Professionals Deployed</div>
                 </div>
               </div>
             </div>
             
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl">
-              <h3 className="text-xl font-bold mb-6 border-b border-white/10 pb-4">Recent Placements</h3>
-              <div className="grid grid-cols-2 gap-4">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="flex items-center gap-3 p-3 bg-white/5 rounded-lg">
-                    <div className="h-10 w-10 rounded-full bg-slate-700 overflow-hidden flex items-center justify-center text-xs font-bold bg-gradient-to-br from-blue-500 to-purple-600">
-                     Varchaslabs
-                    </div>
-                    <div>
-                      <div className="text-sm font-bold">Placed Candidate</div>
-                      <div className="text-xs text-slate-400">Software Engineer</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+  <h3 className="text-xl font-bold mb-6 border-b border-white/10 pb-4">
+    Active Client Engagements
+  </h3>
+
+  <div className="grid grid-cols-2 gap-4">
+    {[
+      {
+        title: "Custom Software Development",
+        subtitle: "FinTech Platform",
+      },
+      {
+        title: "Dedicated Engineering Team",
+        subtitle: "SaaS Product Company",
+      },
+      {
+        title: "QA Automation Services",
+        subtitle: "Enterprise Client",
+      },
+      {
+        title: "IT Staffing Augmentation",
+        subtitle: "Global Technology Firm",
+      },
+    ].map((item, i) => (
+      <div
+        key={i}
+        className="flex items-center gap-3 p-3 bg-white/5 rounded-lg"
+      >
+        <div className="h-10 w-10 rounded-full overflow-hidden flex items-center justify-center text-xs font-bold bg-gradient-to-br from-blue-500 to-purple-600">
+          VL
+        </div>
+
+        <div>
+          <div className="text-sm font-bold">{item.title}</div>
+          <div className="text-xs text-slate-400">{item.subtitle}</div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
           </div>
         </div>
       </section>
