@@ -166,7 +166,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
               Our Partners
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 bg-clip-text text-transparent mb-3">
-              Our MNC Placement Partners
+              Our Clients & Partners
             </h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto">
               Trusted by leading software companies worldwide
