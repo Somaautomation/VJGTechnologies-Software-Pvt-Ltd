@@ -64,7 +64,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary shrink-0" />
-                <span>contact@Varchaslabs.com</span>
+                <span>info@varchaslabs.com</span>
               </li>
             </ul>
           </div>
