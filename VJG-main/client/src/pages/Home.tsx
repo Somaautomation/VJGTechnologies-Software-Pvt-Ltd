@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, CheckCircle2, Trophy, Users, Briefcase, GraduationCap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Trophy, Users, Briefcase, GraduationCap, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
@@ -20,13 +20,60 @@ export default function Home() {
     }
   };
 
+  // WhatsApp Configuration - ADD YOUR NUMBER HERE
+const whatsappNumber = "916360134569"; // Replace with your number: country code + number (no spaces)
+const whatsappMessage = "Hi! I'm interested in your software development services and IT staffing solutions. Please share details on how we can collaborate.";
+const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+  const companies = [
+    { name: "Microsoft", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg" },
+    { name: "Google", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" },
+    { name: "Amazon", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+    { name: "TCS", logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/TCS_Logo.svg" },
+    { name: "Infosys", logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" },
+    { name: "Wipro", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Wipro_Primary_Logo_Color_RGB.svg" },
+    { name: "Accenture", logo: "https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg" },
+    { name: "IBM", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" },
+    { name: "Oracle", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" },
+    { name: "SAP", logo: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" },
+    { name: "Adobe", logo: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Adobe_Corporate_logo.svg" },
+    { name: "Salesforce", logo: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" },
+    { name: "Cognizant", logo: "https://upload.wikimedia.org/wikipedia/commons/6/69/Cognizant_logo_2022.svg" },
+    { name: "HCL Technologies", logo: "https://upload.wikimedia.org/wikipedia/commons/c/c5/HCL_Tech_Bee_Logo.svg" },
+    { name: "Tech Mahindra", logo: "https://upload.wikimedia.org/wikipedia/commons/3/38/Tech_Mahindra_New_Logo.svg" },
+    { name: "Capgemini", logo: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Capgemini_201x_logo.svg" },
+    { name: "Deloitte", logo: "https://upload.wikimedia.org/wikipedia/commons/5/56/Deloitte.svg" },
+    { name: "Dell", logo: "https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" },
+    { name: "HP", logo: "https://upload.wikimedia.org/wikipedia/commons/a/ad/HP_logo_2012.svg" },
+    { name: "Cisco", logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" }
+  ];
+
   return (
     <div className="min-h-screen bg-slate-50">
       <Navbar />
 
+      {/* WhatsApp Floating Button - ADD THIS */}
+<a
+  href={whatsappLink}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="whatsapp-float"
+  aria-label="Contact us on WhatsApp"
+>
+  <div className="whatsapp-button">
+    <svg
+      viewBox="0 0 32 32"
+      className="whatsapp-icon"
+      fill="currentColor"
+    >
+      <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-4.713 1.262 1.262-4.669-0.292-0.508c-1.207-2.100-1.847-4.507-1.847-6.924 0-7.435 6.050-13.485 13.485-13.485s13.485 6.050 13.485 13.485c0 7.435-6.050 13.485-13.485 13.485zM21.98 18.668c-0.241-0.241-0.578-0.394-0.951-0.394-0.366 0-0.672 0.153-0.913 0.394l-1.263 1.263c-0.154 0.154-0.365 0.241-0.596 0.241s-0.442-0.087-0.596-0.241l-3.636-3.636c-0.154-0.154-0.241-0.365-0.241-0.596s0.087-0.442 0.241-0.596l1.263-1.263c0.241-0.241 0.394-0.547 0.394-0.913s-0.153-0.672-0.394-0.913l-2.424-2.424c-0.241-0.241-0.578-0.394-0.951-0.394-0.366 0-0.672 0.153-0.913 0.394l-1.807 1.807c-0.511 0.511-0.793 1.207-0.793 1.95 0 1.153 0.435 2.306 1.294 3.434l0.097 0.127c1.375 1.788 3.293 3.707 5.715 5.715 2.713 2.249 5.186 3.535 7.334 3.827 0.193 0.028 0.386 0.042 0.578 0.042 1.071 0 2.050-0.407 2.759-1.145l1.807-1.807c0.241-0.241 0.394-0.547 0.394-0.913s-0.153-0.672-0.394-0.913l-2.424-2.424z"/>
+    </svg>
+    <span className="whatsapp-text">Chat with us</span>
+  </div>
+</a>
+
       {/* HERO SECTION */}
       <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
-        {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
@@ -100,6 +147,56 @@ export default function Home() {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* SCROLLING CLIENT COMPANIES SECTION */}
+      <section className="py-20 companies-gradient overflow-hidden relative">
+        <div className="absolute inset-0 bg-pattern opacity-10"></div>
+        <div className="container-wrapper relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-wide uppercase mb-4">
+              <Sparkles className="w-4 h-4" />
+              Our Partners
+            </div>
+            <h2 className="text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 bg-clip-text text-transparent mb-3">
+              Our MNC Placement Partners
+            </h2>
+            <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+              Trusted by leading software companies worldwide
+            </p>
+          </motion.div>
+          
+          <div className="relative">
+            <div className="scroll-container">
+              <div className="scroll-content">
+                {[...companies, ...companies].map((company, index) => (
+                  <div key={index} className="company-card">
+                    <img 
+                      src={company.logo} 
+                      alt={company.name}
+                      className="company-logo"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = "none";
+                        const sibling = target.nextElementSibling as HTMLElement;
+                        if (sibling) sibling.style.display = "block";
+                      }}
+                    />
+                    <span className="company-fallback text-xl font-bold text-slate-700">{company.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="scroll-fade-left"></div>
+            <div className="scroll-fade-right"></div>
+          </div>
         </div>
       </section>
 
@@ -243,7 +340,7 @@ export default function Home() {
   );
 }
 
-function StatCard({ number, label, icon }: { number: string, label: string, icon: React.ReactNode }) {
+function StatCard({ number, label, icon }: { number: string; label: string; icon: React.ReactNode }) {
   return (
     <div className="text-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
       <div className="flex justify-center mb-2 text-3xl">{icon}</div>
