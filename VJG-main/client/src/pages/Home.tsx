@@ -4,6 +4,8 @@ import { ArrowRight, CheckCircle2, Trophy, Users, Briefcase, GraduationCap, Spar
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { Rocket, ChevronRight, Handshake } from "lucide-react";
+import { Code2, Scale } from "lucide-react";
 
 export default function Home() {
   const fadeInUp = {
@@ -73,82 +75,177 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 </a>
 
       {/* HERO SECTION */}
-      <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
-            alt="Professionals collaborating" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-slate-900/80 bg-gradient-to-r from-slate-900 via-slate-900/90 to-transparent" />
+<section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+  <div className="absolute inset-0 z-0">
+    <img 
+      src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
+      alt="Professionals collaborating" 
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-slate-900/80 bg-gradient-to-r from-slate-900 via-slate-900/90 to-transparent" />
+  </div>
+
+  <div className="container-wrapper relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+    <motion.div 
+      initial={{ opacity: 0, x: -50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="text-white space-y-6"
+    >
+      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sm font-medium text-blue-100">
+        <span className="relative flex h-2 w-2">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+        </span>
+        Trusted by Growing Tech Companies
+      </div>
+      
+      <h1 className="text-5xl lg:text-7xl font-display font-bold leading-tight">
+        Connecting Engineering <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Talent</span> Real-World Delivery
+      </h1>
+      
+      <p className="text-lg text-slate-300 max-w-xl leading-relaxed">
+        VarchasLabs bridges the gap between aspirants and industry. We hire, train, and deploy skilled engineers who co-work with client teams to deliver exceptional software solutions. ``
+      </p>
+
+      {/* PRIMARY CTAs (For Clients) */}
+      <div className="flex flex-col sm:flex-row gap-4 pt-4">
+        <Link href="/contact">
+          <Button size="lg" className="bg-primary hover:bg-blue-600 text-white px-8 h-14 rounded-xl text-lg shadow-lg shadow-primary/25">
+            <Rocket className="w-5 h-5 mr-2" />
+            Hire Engineers
+          </Button>
+        </Link>
+        <Link href="/services">
+          <Button size="lg" className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 h-14 rounded-xl text-lg shadow-lg shadow-cyan-600/25">
+            <Briefcase className="w-5 h-5 mr-2" />
+            Start a Project
+          </Button>
+        </Link>
+      </div>
+
+      {/* SECONDARY CTA (For Talent) */}
+      <div className="flex flex-col sm:flex-row gap-4">
+        <Link href="/careers#jobs">
+          <Button size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10 px-8 h-12 rounded-xl text-base backdrop-blur-sm">
+            Browse Openings
+            <ChevronRight className="w-4 h-4 ml-2" />
+          </Button>
+        </Link>
+      </div>
+
+      <div className="pt-8 flex items-center gap-8 text-sm font-medium text-slate-400 border-t border-white/10">
+        <div className="flex items-center gap-2">
+          <Handshake className="text-green-400 h-5 w-5" />
+          <span>MNC Delivery Partners</span>
         </div>
-
-        <div className="container-wrapper relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-white space-y-6"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sm font-medium text-blue-100">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-              </span>
-              Top Companies are Hiring Now
-            </div>
-            
-            <h1 className="text-5xl lg:text-7xl font-display font-bold leading-tight">
-              Connecting <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Talent</span> with Tech Opportunity
-            </h1>
-            
-            <p className="text-lg text-slate-300 max-w-xl leading-relaxed">
-              Varchaslabs bridges the gap between aspirants and industry. Get placed in top MNCs with our proven job placement program and dedicated career support.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link href="/contact">
-                <Button size="lg" className="bg-primary hover:bg-blue-600 text-white px-8 h-14 rounded-xl text-lg shadow-lg shadow-primary/25">
-                  Submit Resume
-                </Button>
-              </Link>
-              <a href="#jobs">
-                <Button size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10 px-8 h-14 rounded-xl text-lg backdrop-blur-sm">
-                  Browse Openings
-                </Button>
-              </a>
-            </div>
-
-            <div className="pt-8 flex items-center gap-8 text-sm font-medium text-slate-400 border-t border-white/10">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="text-accent h-5 w-5" />
-                <span>MNC Placement Partners</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="text-accent h-5 w-5" />
-                <span>100% Placement Support</span>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="hidden lg:block relative"
-          >
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary to-accent opacity-30 blur-2xl rounded-full" />
-            <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-2xl">
-              <div className="grid grid-cols-2 gap-8">
-                <StatCard number="1000+" label="Candidates Placed" icon={<Users className="text-accent" />} />
-                <StatCard number="200+" label="MNC Partners" icon={<Briefcase className="text-blue-400" />} />
-                <StatCard number="15+" label="Years Experience" icon={<Trophy className="text-yellow-400" />} />
-                <StatCard number="98%" label="Placement Rate" icon={<CheckCircle2 className="text-green-400" />} />
-              </div>
-            </div>
-          </motion.div>
+        <div className="flex items-center gap-2">
+          <Trophy className="text-yellow-400 h-5 w-5" />
+          <span>15+ Years Excellence</span>
         </div>
-      </section>
+      </div>
+    </motion.div>
+
+    <motion.div 
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.4, duration: 0.8 }}
+      className="hidden lg:block relative"
+    >
+      <div className="absolute -inset-4 bg-gradient-to-r from-primary to-accent opacity-30 blur-2xl rounded-full" />
+      <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-2xl">
+        {/* UPDATED STATS */}
+        <div className="grid grid-cols-2 gap-8">
+          <StatCard number="500+" label="Engineers Trained & Deployed" icon={<Users className="text-cyan-400" />} />
+          <StatCard number="50+" label="Software Projects Delivered" icon={<Briefcase className="text-blue-400" />} />
+          <StatCard number="200+" label="Client & Hiring Partners" icon={<Handshake className="text-green-400" />} />
+          <StatCard number="15+" label="Years Industry Experience" icon={<Trophy className="text-yellow-400" />} />
+        </div>
+        
+        {/* TAGLINE UNDER STATS */}
+        <div className="mt-6 pt-6 border-t border-white/10">
+          <p className="text-center text-sm text-slate-400 italic">
+            Engineers trained by us, deployed within client teams, and aligned to real-world delivery standards.
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
+{/* HOW WE WORK SECTION */}
+<section className="py-24 bg-slate-900">
+  <div className="container-wrapper">
+    <div className="text-center mb-16">
+      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-sm font-medium text-blue-400 mb-6">
+        <Briefcase className="w-4 h-4" />
+        Our Process
+      </div>
+      <h2 className="text-4xl lg:text-5xl font-display font-bold text-white mb-4">
+        Our Delivery & Staffing Model
+      </h2>
+      <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+        A proven methodology that ensures quality delivery and seamless team integration
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8">
+      {/* Step 1 */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="relative group"
+      >
+        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 h-full hover:border-blue-500/50 transition-all duration-300">
+          <div className="text-6xl font-bold text-slate-700/50 absolute top-4 right-4">01</div>
+          <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white mb-6 shadow-lg">
+            <Code2 className="w-8 h-8" />
+          </div>
+          <h3 className="text-xl font-bold text-white mb-3">Hire & Train</h3>
+          <p className="text-slate-400">We recruit engineers and upskill them on real project stacks</p>
+        </div>
+      </motion.div>
+
+      {/* Step 2 */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="relative group"
+      >
+        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 h-full hover:border-blue-500/50 transition-all duration-300">
+          <div className="text-6xl font-bold text-slate-700/50 absolute top-4 right-4">02</div>
+          <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center text-white mb-6 shadow-lg">
+            <Rocket className="w-8 h-8" />
+          </div>
+          <h3 className="text-xl font-bold text-white mb-3">Deploy & Co-Work</h3>
+          <p className="text-slate-400">Engineers integrate with your team and processes</p>
+        </div>
+      </motion.div>
+
+      {/* Step 3 */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        className="relative group"
+      >
+        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 h-full hover:border-blue-500/50 transition-all duration-300">
+          <div className="text-6xl font-bold text-slate-700/50 absolute top-4 right-4">03</div>
+          <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-white mb-6 shadow-lg">
+            <Scale className="w-8 h-8" />
+          </div>
+          <h3 className="text-xl font-bold text-white mb-3">Deliver & Scale</h3>
+          <p className="text-slate-400">Continuous delivery with flexible scaling</p>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+</section>
 
       {/* SCROLLING CLIENT COMPANIES SECTION */}
       <section className="py-20 companies-gradient overflow-hidden relative">
@@ -339,7 +436,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
         <div className="container-wrapper relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900">
-              Hot Job Openings
+              Careers
             </h2>
             <p className="text-slate-600 text-lg">
               Explore immediate opportunities with our premium hiring partners.
