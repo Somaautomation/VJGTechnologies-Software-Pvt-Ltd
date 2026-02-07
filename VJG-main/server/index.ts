@@ -5,6 +5,9 @@ import { createServer } from "http";
 
 const app = express();
 const httpServer = createServer(app);
+console.log("ENV EMAIL:", process.env.SMTP_EMAIL);
+console.log("SMTP PASS:", process.env.SMTP_PASSWORD);
+console.log("CWD:", process.cwd());
 
 declare module "http" {
   interface IncomingMessage {
